@@ -1,0 +1,26 @@
+sources:
+  - name: ReviewService
+    handler:
+      grpc:
+        endpoint: localhost:50051
+        protoFilePath: grpc/proto/service.proto
+        serviceName: ProductReviewService
+        packageName: com.example
+
+transforms:
+  - federation:
+      types:
+        - name: Query
+          config: 
+            extend: true
+        - name: Product
+          config:
+            extend: true
+            keyFields:
+              - productId
+            fields:
+              - name: productId
+                config:
+                  external: true
+            resolveReference: ./src/review-resolver.js
+   

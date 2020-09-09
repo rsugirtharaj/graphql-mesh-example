@@ -1,0 +1,16 @@
+{
+  "name": "federation-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/gateway": "^0.20.0",
+    "apollo-server": "^2.17.0"
+  }
+}
